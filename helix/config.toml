@@ -1,0 +1,4 @@
+theme = "helix"
+
+[editor]
+true-color = true
