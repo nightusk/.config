@@ -1,6 +1,7 @@
 [tools]
 "aqua:fish-shell/fish-shell" = "4.8.0"
 delta = "0.19.2"
+deno = "2.9.2"
 github-cli = "2.96.0"
 helix = "25.07.1"
 neovim = "0.12.4"
