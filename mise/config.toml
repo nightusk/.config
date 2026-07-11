@@ -1,0 +1,3 @@
+[tools]
+delta = "0.19.2"
+github-cli = "2.96.0"
