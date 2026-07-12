@@ -1,2 +1,2 @@
-[config,config.local]
+[{config,config.local}]
 indent_style = tab

@@ -1,5 +1,15 @@
 [include]
 	path = config.local
+[alias]
+	bc = "!f() { git bare-clone $1 && git set-remote && git fetch && git track-branch; }; f"
+	wtd = "!f() { git worktree add --detach $1 $1}"
+
+	bare-clone = "!f() { git clone --bare $1 .git; }; f"
+	set-remote = config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+
+	short-branch = "branch --format='%(refname:short)'"
+	track-branch = "!f() { git short-branch | while read -r branch; do git set-upbranch $branch; done; }; f"
+	set-upbranch = "!f() { git branch --set-upstream-to=origin/$1 $1; }; f"
 [core]
 	autocrlf = false
 	editor = vim
