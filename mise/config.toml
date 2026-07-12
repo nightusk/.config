@@ -1,3 +1,15 @@
+[env]
+XDG_CACHE_HOME = "$HOME/.cache"
+XDG_CONFIG_HOME = "$HOME/.config"
+XDG_DATA_HOME = "$HOME/.local/share"
+
+BUNDLE_USER_CACHE = "$XDG_CACHE_HOME/bundle"
+BUNDLE_USER_CONFIG = "$XDG_CONFIG_HOME/bundle/config"
+BUNDLE_USER_PLUGIN = "$XDG_DATA_HOME/bundle"
+CARGO_HOME = "$XDG_DATA_HOME/cargo"
+DUB_HOME = "$XDG_DATA_HOME/dub"
+RUSTUP_HOME = "$XDG_DATA_HOME/rustup"
+
 [tools]
 "aqua:fish-shell/fish-shell" = "4.8.0"
 delta = "0.19.2"
