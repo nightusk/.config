@@ -28,6 +28,10 @@ os = [ "linux" ]
 version = "latest"
 os = [ "linux" ]
 
+[tools.fzf]
+version = "latest"
+os = [ "linux" ]
+
 [tools.github-cli]
 version = "latest"
 os = [ "linux" ]
@@ -53,5 +57,9 @@ version = "latest"
 os = [ "linux" ]
 
 [tools.zellij]
+version = "latest"
+os = [ "linux" ]
+
+[tools.zoxide]
 version = "latest"
 os = [ "linux" ]

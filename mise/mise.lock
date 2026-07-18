@@ -95,6 +95,45 @@ url = "https://dl.deno.land/release/v2.9.2/deno-x86_64-apple-darwin.zip"
 checksum = "sha256:5fe194d26ac5ef77fcc5288c2c438c7a0465f3b6180440ebf04092714bf2dcdf"
 url = "https://dl.deno.land/release/v2.9.2/deno-x86_64-pc-windows-msvc.zip"
 
+[[tools.fzf]]
+version = "0.73.1"
+backend = "aqua:junegunn/fzf"
+
+[tools.fzf."platforms.linux-arm64"]
+checksum = "sha256:a408b0b6c08d486307b8f1554f967b8b50ee1b3ea8b4035e3161bab31fdfc28d"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088746"
+
+[tools.fzf."platforms.linux-arm64-musl"]
+checksum = "sha256:a408b0b6c08d486307b8f1554f967b8b50ee1b3ea8b4035e3161bab31fdfc28d"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088746"
+
+[tools.fzf."platforms.linux-x64"]
+checksum = "sha256:f3252c2c366bc1700d3c85781ec8c9695998927ac127870eb049ceea2d540f8a"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088716"
+
+[tools.fzf."platforms.linux-x64-musl"]
+checksum = "sha256:f3252c2c366bc1700d3c85781ec8c9695998927ac127870eb049ceea2d540f8a"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088716"
+
+[tools.fzf."platforms.macos-arm64"]
+checksum = "sha256:d27fd68c04fb9b42f7c73a3f7d38069a74d308e40174f64a072c747213e97286"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088717"
+
+[tools.fzf."platforms.macos-x64"]
+checksum = "sha256:75bbf15248d1cf0a13eafc75b8a55f5075c437e2ba6d76899afc53f4f3e1b38c"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088719"
+
+[tools.fzf."platforms.windows-x64"]
+checksum = "sha256:521a974dc32e93404265e55bffaf71a59e05e80abdf8ca4afb21a6030dc76f5f"
+url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-windows_amd64.zip"
+url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/429088728"
+
 [[tools.github-cli]]
 version = "2.96.0"
 backend = "aqua:cli/cli"
@@ -360,3 +399,42 @@ url_api = "https://api.github.com/repos/zellij-org/zellij/releases/assets/419104
 checksum = "sha256:45f25febb588d36f499232b3ba80a9edcde3b3a2a85bebb105a82457b0ca6aef"
 url = "https://github.com/zellij-org/zellij/releases/download/v0.44.3/zellij-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/zellij-org/zellij/releases/assets/419114890"
+
+[[tools.zoxide]]
+version = "0.9.9"
+backend = "aqua:ajeetdsouza/zoxide"
+
+[tools.zoxide."platforms.linux-arm64"]
+checksum = "sha256:96e6ea2e47a71db42cb7ad5a36e9209c8cb3708f8ae00f6945573d0d93315cb0"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580828"
+
+[tools.zoxide."platforms.linux-arm64-musl"]
+checksum = "sha256:96e6ea2e47a71db42cb7ad5a36e9209c8cb3708f8ae00f6945573d0d93315cb0"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580828"
+
+[tools.zoxide."platforms.linux-x64"]
+checksum = "sha256:4ff057d3c4d957946937274c2b8be7af2a9bbae7f90a1b5e9baaa7cb65a20caa"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580823"
+
+[tools.zoxide."platforms.linux-x64-musl"]
+checksum = "sha256:4ff057d3c4d957946937274c2b8be7af2a9bbae7f90a1b5e9baaa7cb65a20caa"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580823"
+
+[tools.zoxide."platforms.macos-arm64"]
+checksum = "sha256:57e733d0436309dae2ed97e46bba43937209395298e1d88812d4e893900cb40a"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580748"
+
+[tools.zoxide."platforms.macos-x64"]
+checksum = "sha256:364249cff18354397c72ebb6b8f7358404c051c486e0f2f7a46e36c86c16f8c7"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580756"
+
+[tools.zoxide."platforms.windows-x64"]
+checksum = "sha256:5af00d0916f05631e3030537289eac56605e7c1733318c4d525c8e847f12496d"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9.9-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/348580868"
