@@ -1,4 +1,19 @@
-theme = "helix"
+theme = "default"
 
 [editor]
+cursorline = true
+cursorcolumn = true
 true-color = true
+bufferline = "always"
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.search]
+wrap-around = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
