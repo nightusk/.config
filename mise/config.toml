@@ -20,11 +20,19 @@ RUSTUP_HOME = "$XDG_DATA_HOME/rustup"
 version = "latest"
 os = [ "linux" ]
 
+[tools.bat]
+version = "latest"
+os = [ "linux" ]
+
 [tools.delta]
 version = "latest"
 os = [ "linux" ]
 
 [tools.deno]
+version = "latest"
+os = [ "linux" ]
+
+[tools.eza]
 version = "latest"
 os = [ "linux" ]
 
@@ -45,6 +53,10 @@ version = "latest"
 os = [ "linux" ]
 
 [tools.neovim]
+version = "latest"
+os = [ "linux" ]
+
+[tools.ripgrep]
 version = "latest"
 os = [ "linux" ]
 
