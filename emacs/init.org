@@ -46,6 +46,13 @@
   (meow-global-mode 1))
 #+end_src
 
+* puni
+#+begin_src elisp
+(use-package puni :ensure t
+  :init
+  (puni-global-mode +1))
+#+end_src
+
 * Local Variables                                                  :noexport:
 # Local Variables:
 # org-edit-src-content-indentation: 0
