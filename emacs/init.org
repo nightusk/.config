@@ -64,6 +64,13 @@
     (ddskk-posframe-mode +1)))
 #+end_src
 
+* diff-hl
+#+begin_src elisp
+(use-package diff-hl :ensure t
+  :init
+  (global-diff-hl-mode +1))
+#+end_src
+
 * meow
 #+begin_src elisp
 (use-package meow :ensure t :pin nongnu
