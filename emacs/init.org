@@ -33,6 +33,19 @@
   (emacs-lisp-mode . (lambda () (setopt indent-tabs-mode nil))))
 #+end_src
 
+* meow
+#+begin_src elisp
+(use-package meow :ensure t :pin nongnu
+  :config
+  (org-babel-load-file
+   (expand-file-name "KEYBINDING_QWERTY.org"
+                     (package-desc-dir (package-get-descriptor 'meow))))
+  (meow-setup)
+  (meow-define-keys 'insert
+    '("C-[" . meow-normal-mode))
+  (meow-global-mode 1))
+#+end_src
+
 * Local Variables                                                  :noexport:
 # Local Variables:
 # org-edit-src-content-indentation: 0
