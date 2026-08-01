@@ -1,0 +1,40 @@
+#+PROPERTY: header-args:elisp :tangle init.el
+
+* builtin configuration
+#+begin_src elisp
+;;; init.el -*- lexical-binding: t; -*-
+(use-package emacs
+  :bind
+  ("C-c C-h" . help-command)
+  :config
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (add-to-list 'safe-local-eval-forms
+               '(add-hook 'after-save-hook #'org-babel-tangle nil t))
+  (keyboard-translate ?\C-h ?\d)
+  (load-theme (if (display-graphic-p) 'modus-operandi 'modus-vivendi))
+  (setopt auto-save-default nil
+          create-lockfiles nil
+          inhibit-startup-screen t
+          init-file-debug t
+          initial-scratch-message ""
+          make-backup-files nil
+          show-trailing-whitespace t
+          use-short-answers t)
+  (delete-selection-mode +1)
+  (editorconfig-mode +1)
+  (electric-pair-mode +1)
+  (fido-vertical-mode +1)
+  (global-auto-revert-mode +1)
+  (global-whitespace-mode +1)
+  (recentf-mode +1)
+  (save-place-mode +1)
+  (savehist-mode +1)
+  :hook
+  (emacs-lisp-mode . (lambda () (setopt indent-tabs-mode nil))))
+#+end_src
+
+* Local Variables                                                  :noexport:
+# Local Variables:
+# org-edit-src-content-indentation: 0
+# eval: (add-hook 'after-save-hook #'org-babel-tangle nil t)
+# End:
