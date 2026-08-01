@@ -18,7 +18,9 @@
           init-file-debug t
           initial-scratch-message ""
           make-backup-files nil
+          read-extended-command-predicate #'command-completion-default-include-p
           show-trailing-whitespace t
+          tab-always-indent 'complete
           use-short-answers t)
   (delete-selection-mode +1)
   (editorconfig-mode +1)
@@ -31,6 +33,18 @@
   (savehist-mode +1)
   :hook
   (emacs-lisp-mode . (lambda () (setopt indent-tabs-mode nil))))
+#+end_src
+
+* corfu
+#+begin_src elisp
+(use-package corfu :ensure t
+  :init
+  (global-corfu-mode 1)
+  :config
+  (setopt corfu-auto t
+          corfu-auto-delay .2
+          corfu-auto-trigger "."
+          corfu-quit-no-match 'separator))
 #+end_src
 
 * ddskk
