@@ -83,6 +83,13 @@
   (meow-global-mode 1))
 #+end_src
 
+* mise
+#+begin_src elisp
+(use-package mise :ensure t
+  :hook
+  (after-init . global-mise-mode))
+#+end_src
+
 * puni
 #+begin_src elisp
 (use-package puni :ensure t
@@ -90,7 +97,16 @@
   (puni-global-mode +1))
 #+end_src
 
-* sly
+* prog-modes
+
+** cider
+#+begin_src elisp
+(use-package cider :ensure t
+  :hook
+  (clojure-mode . eglot-ensure))
+#+end_src
+
+** sly
 #+begin_src elisp
 (use-package sly :ensure t
   :init

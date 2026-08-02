@@ -13,8 +13,8 @@ BUNDLE_USER_CONFIG = "$XDG_CONFIG_HOME/bundle/config"
 BUNDLE_USER_PLUGIN = "$XDG_DATA_HOME/bundle"
 CARGO_HOME = "$XDG_DATA_HOME/cargo"
 DUB_HOME = "$XDG_DATA_HOME/dub"
+GITLIBS = "$XDG_DATA_HOME/gitlibs"
 RUSTUP_HOME = "$XDG_DATA_HOME/rustup"
-
 
 [tools."aqua:fish-shell/fish-shell"]
 version = "latest"
