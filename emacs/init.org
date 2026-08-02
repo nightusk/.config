@@ -91,6 +91,18 @@
   (puni-global-mode +1))
 #+end_src
 
+* sly
+#+begin_src elisp
+(use-package sly :ensure t
+  :init
+  (setopt inferior-lisp-program "sbcl")
+  :config
+  (add-to-list 'sly-contribs 'sly-autodoc)
+  (use-package sly-asdf :ensure t
+    :init
+    (add-to-list 'sly-contribs 'sly-asdf)))
+#+end_src
+
 * Local Variables                                                  :noexport:
 # Local Variables:
 # org-edit-src-content-indentation: 0
