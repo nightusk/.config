@@ -1,0 +1,6 @@
+[settings]
+lockfile = true
+minimum_release_age = "1mo"
+
+[tools]
+just = "latest"
