@@ -2,5 +2,36 @@
 lockfile = true
 minimum_release_age = "1mo"
 
-[tools]
-just = "latest"
+[tasks.submodule-add]
+usage = '''
+  arg "<url>"
+  arg "<path>"
+'''
+dir = "{{cwd}}"
+run = "git submodule add ${usage_url} ${usage_path}"
+
+[tasks.submodule-remove]
+usage = '''
+  arg "<path>"
+'''
+dir = "{{cwd}}"
+run = [
+  'git submodule deinit -f -- ${usage_path}',
+  'rm -rf .git/modules/${usage_path}',
+  'git rm -f ${usage_path}',
+]
+
+[tasks.submodule-init]
+usage = '''
+  arg "<path>"
+'''
+dir = "{{cwd}}"
+run = "git submodule update --init --recursive ${usage_path}"
+
+[tasks.submodules-init]
+dir = "{{cwd}}"
+run = "git submodule update --init --recursive"
+
+[tasks.submodules-update]
+dir = "{{cwd}}"
+run = "git submodule update --recursive"
