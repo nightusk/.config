@@ -25,3 +25,6 @@
 	conflictStyle = zdiff3
 [pull]
 	ff = only
+[commit]
+	template = ~/.config/git/commit.template
+	verbose = true
