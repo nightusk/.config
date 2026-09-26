@@ -2,11 +2,12 @@
 disable_backends = ["conda"]
 lockfile = true
 minimum_release_age = "1mo"
+experimental = true
 
 [env]
-XDG_CACHE_HOME = "$HOME/.cache"
-XDG_CONFIG_HOME = "$HOME/.config"
-XDG_DATA_HOME = "$HOME/.local/share"
+XDG_CACHE_HOME = "${HOME:-$USERPROFILE}/.cache"
+XDG_CONFIG_HOME = "${HOME:-$USERPROFILE}/.config"
+XDG_DATA_HOME = "${HOME:-$USERPROFILE}/.local/share"
 
 BUNDLE_USER_CACHE = "$XDG_CACHE_HOME/bundle"
 BUNDLE_USER_CONFIG = "$XDG_CONFIG_HOME/bundle/config"
@@ -28,7 +29,7 @@ os = [ "linux" ]
 
 [tools.delta]
 version = "latest"
-os = [ "linux" ]
+os = [ "linux", "windows" ]
 
 [tools.deno]
 version = "latest"
