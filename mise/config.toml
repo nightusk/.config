@@ -39,7 +39,7 @@ os = [ "linux" ]
 
 [tools.fzf]
 version = "latest"
-os = [ "linux" ]
+os = [ "linux", "windows" ]
 
 [tools.github-cli]
 version = "latest"
@@ -67,4 +67,4 @@ os = [ "linux" ]
 
 [tools.zoxide]
 version = "latest"
-os = [ "linux" ]
+os = [ "linux", "windows" ]
