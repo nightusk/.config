@@ -49,10 +49,6 @@ os = [ "linux" ]
 version = "latest"
 os = [ "linux" ]
 
-[tools.lua-language-server]
-version = "latest"
-os = [ "linux" ]
-
 [tools.neovim]
 version = "latest"
 os = [ "linux" ]
@@ -64,10 +60,6 @@ os = [ "linux" ]
 [tools.starship]
 version = "latest"
 os = [ "linux", "windows" ]
-
-[tools.stylua]
-version = "latest"
-os = [ "linux" ]
 
 [tools.zellij]
 version = "latest"
