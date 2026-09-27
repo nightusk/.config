@@ -63,7 +63,7 @@ os = [ "linux" ]
 
 [tools.starship]
 version = "latest"
-os = [ "linux" ]
+os = [ "linux", "windows" ]
 
 [tools.stylua]
 version = "latest"

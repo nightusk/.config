@@ -1,6 +1,16 @@
 export MISE_DATA_DIR=$HOME/.local/share/mise
-export ZELLIJ_AUTO_ATTACH="true"
-eval "$( \
-  $MISE_DATA_DIR/shims/zellij setup --generate-auto-start bash \
-  | sed -E s#\(^\|[[:space:]]\)\(zellij\)\([[:space:]]\|$\)#\\1$MISE_DATA_DIR/shims/\\2\\3# \
-  )"
+case "$(uname -s)" in
+  Linux*)
+    export ZELLIJ_AUTO_ATTACH="true"
+    eval "$( \
+      $MISE_DATA_DIR/shims/zellij setup --generate-auto-start bash \
+      | sed -E s#\(^\|[[:space:]]\)\(zellij\)\([[:space:]]\|$\)#\\1$MISE_DATA_DIR/shims/\\2\\3# \
+      )"
+    ;;
+  MINGW*)
+    eval "$(mise activate bash)"
+    eval "$(starship init bash)"
+    ;;
+  *)
+    ;;
+esac
