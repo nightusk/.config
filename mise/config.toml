@@ -31,7 +31,7 @@ os = [ "linux", "windows" ]
 
 [tools.deno]
 version = "latest"
-os = [ "linux" ]
+os = [ "linux", "windows" ]
 
 [tools.eza]
 version = "latest"
