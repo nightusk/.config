@@ -1,33 +1,12 @@
-[tasks.submodule-add]
-usage = '''
-  arg "<url>"
-  arg "<path>"
-'''
-dir = "{{cwd}}"
-run = "git submodule add ${usage_url} ${usage_path}"
+[hooks.postinstall]
+run = "mise --cd ~/.config run init"
 
-[tasks.submodule-remove]
-usage = '''
-  arg "<path>"
-'''
-dir = "{{cwd}}"
-run = [
-  'git submodule deinit -f -- ${usage_path}',
-  'rm -rf .git/modules/${usage_path}',
-  'git rm -f ${usage_path}',
-]
+[tasks.init]
+dir = "~/.config"
+run = "just init"
+sources = [".gitmodules"]
+outputs = ["emacs/.git", "vim/.git"]
 
-[tasks.submodule-init]
-usage = '''
-  arg "<path>"
-'''
-dir = "{{cwd}}"
-run = "git submodule update --init --recursive ${usage_path}"
-
-[tasks.submodules-init]
-dir = "{{cwd}}"
-run = "git submodule update --init --recursive"
-
-[tasks.submodules-update]
-dir = "{{cwd}}"
-run = "git submodule update --recursive"
+[tools.just]
+version = "latest"
+os = [ "linux", "windows" ]
