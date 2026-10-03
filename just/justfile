@@ -1,0 +1,25 @@
+add-git-hook hook:
+    #!/bin/sh
+    HOOK_PATH={{ home_directory() }}/.config/git/hooks/{{ hook }}
+    cat << EOF > $HOOK_PATH
+    #!/bin/sh
+    just -g run-git-hook {{ hook }} \"\$@\"
+    EOF
+    chmod +x $HOOK_PATH
+
+run-git-hook hook *args:
+    @just -g run-local-git-hook {{ hook }} "{{ args }}"
+    @just -g git-{{ hook }}-hook "{{ args }}"
+
+run-local-git-hook hook *args:
+    #!/bin/sh
+    HOOK_PATH="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/hooks/{{ hook }}"
+    if [ -f "$HOOK_PATH" ]; then
+      "$HOOK_PATH" {{ args }} || exit 1
+    fi
+
+git-commit-msg-hook file:
+    cog verify --file {{ file }}
+
+git-pre-push-hook name url:
+    cog check --from-latest-tag

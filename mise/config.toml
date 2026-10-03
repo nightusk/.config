@@ -25,6 +25,10 @@ os = [ "linux" ]
 version = "latest"
 os = [ "linux" ]
 
+[tools.cocogitto]
+version = "latest"
+os = [ "linux", "windows" ]
+
 [tools.delta]
 version = "latest"
 os = [ "linux", "windows" ]
@@ -48,6 +52,10 @@ os = [ "linux" ]
 [tools.helix]
 version = "latest"
 os = [ "linux" ]
+
+[tools.just]
+version = "latest"
+os = [ "linux", "windows" ]
 
 [tools.neovim]
 version = "latest"

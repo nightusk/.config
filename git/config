@@ -13,6 +13,7 @@
 [core]
 	autocrlf = false
 	editor = vim
+	hooksPath = ~/.config/git/hooks
 	pager = delta
 [delta]
 	dark = true
