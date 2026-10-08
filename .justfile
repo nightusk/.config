@@ -1,22 +1,22 @@
 set unstable
 set lists
 
+git_mod_dir := "$(git rev-parse --path-format=absolute --git-common-dir)/modules"
+
+init: init-submodules
+
 add-submodule url path:
-    #!/bin/sh
     git submodule add {{ url }} {{ path }}
 
 remove-submodule path:
-    #!/bin/sh
-    GIT_MOD_DIR="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/modules/{{ path }}"
     git submodule deinit -f -- {{ path }}
-    rm -rf $GIT_MOD_DIR
+    rm -rf {{ git_mod_dir }}/{{ path }}
     git rm -f {{ path }}
 
-[cache(outputs = ["emacs/.git", "vim/.git"])]
-init:
-    #!/bin/sh
+[cache]
+[script]
+init-submodules:
     git submodule update --init --recursive
 
 update-submodules:
-    #!/bin/sh
     git submodule update --recursive
