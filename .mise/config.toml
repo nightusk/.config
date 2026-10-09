@@ -1,5 +1,6 @@
 [hooks.postinstall]
 run = "mise --cd ~/.config run init"
+run_windows = "PowerShell -NoLogo -WorkingDirectory ~/.config -Command mise run init"
 
 [tasks.init]
 dir = "~/.config"
