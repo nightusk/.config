@@ -1,25 +1,25 @@
+[windows]
+set shell := ["C:\\Program Files\\Git\\bin\\sh.exe", "-cu"]
+
+git_hook_dir := "~/.config/git/hooks"
+export GIT_HOOK_SCRIPT := '''
+  #!/bin/sh
+  mise exec -- just -g run-git-hook $(basename $0) \"$@\"
+'''
+
 add-git-hook hook:
-    #!/bin/sh
-    HOOK_PATH={{ home_directory() }}/.config/git/hooks/{{ hook }}
-    cat << EOF > $HOOK_PATH
-    #!/bin/sh
-    just -g run-git-hook {{ hook }} \"\$@\"
-    EOF
-    chmod +x $HOOK_PATH
+    printf %s "$GIT_HOOK_SCRIPT" > {{ git_hook_dir }}/{{ hook }}
+    chmod +x {{ git_hook_dir }}/{{ hook }}
 
-run-git-hook hook *args:
-    @just -g run-local-git-hook {{ hook }} "{{ args }}"
-    @just -g git-{{ hook }}-hook "{{ args }}"
+@run-git-hook hook *args:
+    mise exec -- just -g run-local-git-hook {{ hook }} "{{ args }}"
+    mise exec -- just -g git-{{ hook }}-hook "{{ args }}"
 
-run-local-git-hook hook *args:
-    #!/bin/sh
-    HOOK_PATH="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/hooks/{{ hook }}"
-    if [ -f "$HOOK_PATH" ]; then
-      "$HOOK_PATH" {{ args }} || exit 1
-    fi
+@run-local-git-hook hook *args:
+    if [ -f "{{ git_hook_dir }}/{{ hook }}" ]; then "{{ git_hook_dir }}/{{ hook }}" {{ args }} || exit 1; fi
 
-git-commit-msg-hook file:
-    cog verify --file {{ file }}
+@git-commit-msg-hook file:
+    mise exec -- cog verify --file {{ file }}
 
-git-pre-push-hook name url:
-    cog check --from-latest-tag
+@git-pre-push-hook name url:
+    mise exec -- cog check --from-latest-tag

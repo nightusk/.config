@@ -14,14 +14,14 @@
 	autocrlf = false
 	editor = vim
 	hooksPath = ~/.config/git/hooks
-	pager = delta
+	pager = mise exec -- delta
 [delta]
 	dark = true
 	navigate = true
 [fetch]
 	prune = true
 [interactive]
-	diffFilter = delta --color-only
+	diffFilter = mise exec -- delta --color-only
 [merge]
 	conflictStyle = zdiff3
 [pull]
