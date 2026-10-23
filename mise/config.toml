@@ -1,7 +1,7 @@
 [settings]
 disable_backends = ["conda"]
 lockfile = true
-minimum_release_age = "1mo"
+minimum_release_age = "7d"
 experimental = true
 
 [env]
