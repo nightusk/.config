@@ -2,6 +2,8 @@
 set shell := ["C:\\Program Files\\Git\\bin\\sh.exe", "-cu"]
 
 git_hook_dir := "~/.config/git/hooks"
+local_git_dir := `git rev-parse --git-common-dir --path-format=absolute`
+
 export GIT_HOOK_SCRIPT := '''
   #!/bin/sh
   mise exec -- just -g run-git-hook $(basename $0) \"$@\"
@@ -16,7 +18,7 @@ add-git-hook hook:
     mise exec -- just -g git-{{ hook }}-hook "{{ args }}"
 
 @run-local-git-hook hook *args:
-    if [ -f "{{ git_hook_dir }}/{{ hook }}" ]; then "{{ git_hook_dir }}/{{ hook }}" {{ args }} || exit 1; fi
+    if [ -f "{{ local_git_dir }}/hooks/{{ hook }}" ]; then "{{ local_git_dir }}/hooks/{{ hook }}" {{ args }} || exit 1; fi
 
 @git-commit-msg-hook file:
     mise exec -- cog verify --file {{ file }}
