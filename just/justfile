@@ -25,3 +25,5 @@ add-git-hook hook:
 
 @git-pre-push-hook name url:
     mise exec -- cog check --from-latest-tag
+
+@git-pre-commit-hook *args:

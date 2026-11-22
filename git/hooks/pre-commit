@@ -1,0 +1,2 @@
+#!/bin/sh
+mise exec -- just -g run-git-hook $(basename $0) \"$@\"
