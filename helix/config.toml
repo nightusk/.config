@@ -12,6 +12,10 @@ normal = "block"
 insert = "bar"
 select = "block"
 
+[editor.file-picker]
+hidden = false
+deduplicate-links = false
+
 [editor.search]
 wrap-around = false
 
